@@ -1,6 +1,7 @@
 /* Botiquín emocional: elegir un estado muestra la esencia que lo acompaña. */
 
 cargarDatos('esencias.json', 'chips', (esencias, chips) => {
+  if (!esencias.length) throw new Error('sin esencias');  // acá vacío sí es falla
   const receta = document.getElementById('receta');
   esencias.forEach(e => {
     const b = document.createElement('button');

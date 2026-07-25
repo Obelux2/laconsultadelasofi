@@ -22,39 +22,24 @@
 <main>
   <section>
     <div class="wrap">
-      <span class="eyebrow">Agenda online</span>
-      <h2>Reserva tu sesión</h2>
-      <p>Tres pasos y listo. <span class="demo-badge">demo — así se vería tu agenda real</span></p>
-      <div class="pasos" aria-hidden="true">
-        <span class="paso" data-p="1"><span class="n">1</span> Sesión</span><span class="sep"></span>
-        <span class="paso" data-p="2"><span class="n">2</span> Día</span><span class="sep"></span>
-        <span class="paso" data-p="3"><span class="n">3</span> Hora</span>
+      <span class="eyebrow">Agenda tu sesión</span>
+      <h2>Conversemos</h2>
+      <p>Escríbele a la Sofi contándole qué te pasa y qué sesión te acomoda. Ella
+        te responde con los horarios que tiene disponibles y coordinan de ahí.
+        Las sesiones son <strong>online o presenciales</strong>, a convenir.</p>
+
+      <div class="grid">
+        <div class="card"><div class="flower">🌼</div><h3>Terapia floral</h3><p>Bach, Bush australianas, californianas o chilenas. Se conversa, se identifica qué está pasando y se prepara una mezcla a tu medida.</p></div>
+        <div class="card"><div class="flower">✨</div><h3>Terapia energética</h3><p>Para cuando las emociones se quedan pegadas en el cuerpo: destrabar, ordenar y devolver el flujo.</p></div>
+        <div class="card"><div class="flower">🌸</div><h3>Sesión ADABA</h3><p>Su método propio, desarrollado en más de 20 años de consulta. Trabajo sobre el campo energético para destrabar temas de largo tiempo.</p></div>
       </div>
-      <div class="agenda-box">
-        <div id="a-paso1">
-          <h3>¿Qué sesión necesitas?</h3>
-          <div class="chips" id="a-tipos" role="group" aria-label="Tipo de sesión"></div>
-        </div>
-        <div id="a-paso2" hidden>
-          <h3>Elige un día</h3>
-          <p style="font-size:.88rem; color:var(--ink-soft)" id="a-mes"></p>
-          <div class="cal" id="a-cal" role="group" aria-label="Días disponibles"></div>
-        </div>
-        <div id="a-paso3" hidden>
-          <h3>¿A qué hora?</h3>
-          <div class="horas chips" id="a-horas" role="group" aria-label="Horas disponibles"></div>
-        </div>
-        <div class="confirmacion" id="a-conf" hidden aria-live="polite">
-          <h3>🌸 ¡Quedó agendado! (en la demo)</h3>
-          <ul class="resumen">
-            <li>Sesión: <b id="c-tipo"></b></li>
-            <li>Día: <b id="c-dia"></b></li>
-            <li>Hora: <b id="c-hora"></b> (online o presencial, a convenir)</li>
-          </ul>
-          <p style="font-size:.9rem; color:var(--ink-soft)">En el sitio real, este paso te llegaría por correo/WhatsApp con la confirmación de la Sofi. Nada se ha reservado de verdad.</p>
-          <button class="btn small" id="a-reset">Probar de nuevo</button>
-        </div>
+
+      <div class="cta-row" style="margin-top:2rem">
+        <a class="btn primary" href="mailto:laconsultadelasofi@gmail.com?subject=Quiero%20agendar%20una%20sesi%C3%B3n">✉️ Escribir para agendar</a>
       </div>
+
+      <p class="nota-agenda">Si no sabes cuál de las tres te sirve, escríbele igual
+        y lo vemos juntos: eso también es parte de la primera conversación.</p>
     </div>
   </section>
 </main>
@@ -70,10 +55,10 @@
       <li><a class="ico-link" href="https://www.instagram.com/laconsultadelasofi/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</a></li>
       <li><a class="ico-link" href="mailto:laconsultadelasofi@gmail.com"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>Correo</a></li>
     </ul>
-    <small>Propuesta de diseño — hecha con cariño para Sofía Vera · Las esencias florales complementan y no reemplazan tratamientos médicos · Agendamiento e inscripciones en modo demostración.</small>
+    <small>Las esencias florales complementan y no reemplazan tratamientos médicos.</small>
   </div>
 </footer>
 
-<script src="js/agendar.js" defer></script>
+
 </body>
 </html>

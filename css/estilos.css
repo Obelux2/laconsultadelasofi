@@ -113,7 +113,7 @@
   }
   .chip:hover{border-color:var(--sage); transform:translateY(-1px)}
   .chip[aria-pressed="true"]{background:var(--sage-ink); border-color:var(--sage-ink); color:#fff}
-  .chip:focus-visible,.btn:focus-visible,a:focus-visible,.dia:focus-visible{outline:3px solid var(--ink); outline-offset:2px}
+  .chip:focus-visible,.btn:focus-visible,a:focus-visible{outline:3px solid var(--ink); outline-offset:2px}
   .receta{
     margin-top:1rem; background:var(--card); border:1px dashed var(--sage); border-radius:var(--radius);
     padding:1.5rem 1.6rem;
@@ -162,39 +162,12 @@
   .taller-card .precio{font-family:Georgia,serif; font-size:1.25rem; color:var(--coral)}
   .cupos{display:inline-block; font-size:.78rem; background:var(--sage-soft); color:var(--ink); border-radius:999px; padding:.2em .9em; font-weight:600}
   .cupos.pocos{background:var(--coral-soft)}
-  .inscrito{border:1px dashed var(--sage); border-radius:12px; padding:.8rem 1rem; font-size:.9rem; margin-top:.6rem}
-  .inscrito[hidden]{display:none}
-  .demo-badge{
-    display:inline-block; font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; font-weight:700;
-    background:var(--rose); color:var(--ink); border-radius:6px; padding:.2em .7em; transform:rotate(-1.5deg);
-  }
+  /* Sección sin contenido todavía: no es un error, así que se ve tranquila. */
+  .aviso-vacio{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:1.2rem 1.4rem; color:var(--ink-soft); max-width:38rem}
 
   /* ---------- agendar ---------- */
-  .pasos{display:flex; gap:.5rem; align-items:center; flex-wrap:wrap; margin:1.2rem 0 1.8rem; font-size:.85rem; color:var(--ink-soft)}
-  .paso{display:flex; align-items:center; gap:.45em}
-  .paso .n{width:1.7em;height:1.7em;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--line);font-weight:700;background:var(--card)}
-  .paso.done .n{background:var(--sage-ink); border-color:var(--sage-ink); color:#fff}
-  .paso.now .n{background:var(--coral); border-color:var(--coral); color:#fff}
-  .pasos .sep{width:2rem;height:1px;background:var(--line)}
-  .agenda-box{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:1.8rem}
-  .cal{display:grid; grid-template-columns:repeat(7,1fr); gap:.35rem; max-width:26rem; margin-top:1rem}
-  .cal .dow{font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); text-align:center; font-weight:700}
-  .dia{
-    aspect-ratio:1; border:1.5px solid transparent; border-radius:10px; display:grid; place-items:center;
-    font-size:.92rem; background:none; cursor:pointer; font-family:inherit; color:var(--ink);
-    font-variant-numeric:tabular-nums;
-  }
-  .dia:not(:disabled):hover{border-color:var(--sage)}
-  .dia:disabled{color:color-mix(in srgb, var(--ink-soft) 45%, transparent); cursor:default}
-  .dia[aria-pressed="true"]{background:var(--coral); color:#fff; font-weight:700}
-  .dia.hoy{border-color:var(--line)}
-  .horas{margin-top:1rem}
-  .confirmacion{border:1px dashed var(--sage); border-radius:var(--radius); padding:1.6rem; margin-top:1rem}
-  .confirmacion[hidden]{display:none}
-  .confirmacion h3{color:var(--coral)}
-  .resumen{list-style:none; padding:0; margin:.8rem 0; max-width:30rem}
-  .resumen li{padding:.3rem 0; border-bottom:1px dotted var(--line)}
-  .resumen b{font-family:Georgia,serif}
+  .nota-agenda{font-size:.92rem; color:var(--ink-soft); font-style:italic; margin-top:1.4rem; max-width:38rem}
 
   /* ---------- footer ---------- */
   footer{background:#4A3B30; color:#F2E8DA; padding:3.5rem 1.4rem 2.5rem; border-top:1px solid var(--line)}

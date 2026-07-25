@@ -36,7 +36,10 @@ async function cargarDatos(archivo, contenedorId, pintar) {
     const respuesta = await fetch('datos/' + archivo);
     if (!respuesta.ok) throw new Error(respuesta.status);
     const datos = await respuesta.json();
-    if (!Array.isArray(datos) || !datos.length) throw new Error('vacío');
+    if (!Array.isArray(datos)) throw new Error('formato');
+    // Una lista vacía NO es un error: que no haya talleres abiertos es normal.
+    // Cada sección decide qué mostrar en ese caso; si para ella estar vacía sí
+    // es una falla, que lance y cae en el aviso de abajo.
     pintar(datos, cont);
     reubicarAncla();
   } catch {
