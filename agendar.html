@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agendar una sesión — La Consulta de la Sofi</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- ponytail: nav duplicado en las 4 páginas; sin build no hay includes. Si cambia, cambiarlo en las 4. -->
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">🌸 La Consulta de la Sofi</a>
+    <a class="link" href="index.html">Inicio</a>
+    <a class="link" href="talleres.html">Talleres</a>
+    <a class="link" href="escuchame.html">Escúchame</a>
+    <a class="btn primary small" href="agendar.html" aria-current="page">Agendar</a>
+  </div>
+</nav>
+
+<main>
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Agenda online</span>
+      <h2>Reserva tu sesión</h2>
+      <p>Tres pasos y listo. <span class="demo-badge">demo — así se vería tu agenda real</span></p>
+      <div class="pasos" aria-hidden="true">
+        <span class="paso" data-p="1"><span class="n">1</span> Sesión</span><span class="sep"></span>
+        <span class="paso" data-p="2"><span class="n">2</span> Día</span><span class="sep"></span>
+        <span class="paso" data-p="3"><span class="n">3</span> Hora</span>
+      </div>
+      <div class="agenda-box">
+        <div id="a-paso1">
+          <h3>¿Qué sesión necesitas?</h3>
+          <div class="chips" id="a-tipos" role="group" aria-label="Tipo de sesión"></div>
+        </div>
+        <div id="a-paso2" hidden>
+          <h3>Elige un día</h3>
+          <p style="font-size:.88rem; color:var(--ink-soft)" id="a-mes"></p>
+          <div class="cal" id="a-cal" role="group" aria-label="Días disponibles"></div>
+        </div>
+        <div id="a-paso3" hidden>
+          <h3>¿A qué hora?</h3>
+          <div class="horas chips" id="a-horas" role="group" aria-label="Horas disponibles"></div>
+        </div>
+        <div class="confirmacion" id="a-conf" hidden aria-live="polite">
+          <h3>🌸 ¡Quedó agendado! (en la demo)</h3>
+          <ul class="resumen">
+            <li>Sesión: <b id="c-tipo"></b></li>
+            <li>Día: <b id="c-dia"></b></li>
+            <li>Hora: <b id="c-hora"></b> (online o presencial, a convenir)</li>
+          </ul>
+          <p style="font-size:.9rem; color:var(--ink-soft)">En el sitio real, este paso te llegaría por correo/WhatsApp con la confirmación de la Sofi. Nada se ha reservado de verdad.</p>
+          <button class="btn small" id="a-reset">Probar de nuevo</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ponytail: footer duplicado en las 4 páginas. Si cambia, cambiarlo en las 4. -->
+<footer>
+  <div class="wrap">
+    <h2 style="font-size:1.3rem">La Consulta de la Sofi</h2>
+    <p style="opacity:.85">Educación emocional para una vida rica y feliz.</p>
+    <ul class="links">
+      <li><a class="ico-link" href="https://www.facebook.com/LaConsultaDeLaSofi" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a></li>
+      <li><a class="ico-link" href="https://www.youtube.com/@LaConsultadelaSofi" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.92 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.41z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>YouTube</a></li>
+      <li><a class="ico-link" href="https://www.instagram.com/laconsultadelasofi/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</a></li>
+      <li><a class="ico-link" href="mailto:laconsultadelasofi@gmail.com"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>Correo</a></li>
+    </ul>
+    <small>Propuesta de diseño — hecha con cariño para Sofía Vera · Las esencias florales complementan y no reemplazan tratamientos médicos · Agendamiento e inscripciones en modo demostración.</small>
+  </div>
+</footer>
+
+<script src="js/agendar.js" defer></script>
+</body>
+</html>

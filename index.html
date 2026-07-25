@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Consulta de la Sofi — Terapia floral y educación emocional</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- ponytail: nav duplicado en las 4 páginas; sin build no hay includes. Si cambia, cambiarlo en las 4. -->
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">🌸 La Consulta de la Sofi</a>
+    <a class="link" href="index.html" aria-current="page">Inicio</a>
+    <a class="link" href="talleres.html">Talleres</a>
+    <a class="link" href="escuchame.html">Escúchame</a>
+    <a class="btn primary small" href="agendar.html">Agendar</a>
+  </div>
+</nav>
+
+<main>
+  <div class="hero">
+    <canvas id="petals" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div>
+        <span class="onair"><span class="dot"></span>ON AIR</span>
+        <h1>Educación emocional para una vida <em>rica y feliz</em></h1>
+        <p class="sub">Soy <strong>Sofía Vera</strong> — terapeuta floral y comunicadora. Acompaño procesos emocionales con terapias florales — Bach, Bush australianas, californianas y chilenas — y terapias energéticas, incluida <strong>ADABA</strong>, mi método propio. Todo en un espacio cercano, sin solemnidad y con harto humor.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="agendar.html">Agenda una sesión</a>
+          <a class="btn" href="#botiquin">Prueba el botiquín emocional</a>
+        </div>
+        <p class="credo">"Médico por vocación, diseñadora y recolectora de buenas herramientas para mantenerse contento, sano y vivir intensamente una vida interesante."</p>
+      </div>
+      <div class="avatar-ring">
+        <img src="assets/sofi-avatar.jpg" width="320" height="320" alt="Ilustración de Sofía con audífonos rojos y un micrófono de radio con el letrero ON AIR">
+      </div>
+    </div>
+  </div>
+
+  <section id="terapias">
+    <div class="wrap">
+      <span class="eyebrow">Terapias</span>
+      <h2>Un jardín completo de herramientas</h2>
+      <p>Cada sistema tiene su propio carácter. En sesión conversamos, identificamos qué está pasando y preparamos el acompañamiento a tu medida — como un traje, pero de flores.</p>
+      <div class="grid">
+        <div class="card"><div class="flower">🌼</div><h3>Flores de Bach</h3><p>El sistema clásico inglés: 38 esencias para estados emocionales universales, del miedo a la desesperanza. La puerta de entrada a la terapia floral.</p></div>
+        <div class="card"><div class="flower">🌺</div><h3>Bush australianas</h3><p>Esencias del bush australiano, potentes y directas, para temas contemporáneos: ansiedad, vergüenza, sexualidad, duelo y aprendizaje.</p></div>
+        <div class="card"><div class="flower">🌷</div><h3>Californianas</h3><p>Un sistema profundo para trabajar patrones psicológicos, relaciones, creatividad y propósito de vida.</p></div>
+        <div class="card"><div class="flower">🌵</div><h3>Flores chilenas</h3><p>Nuestra flora nativa hecha esencia: del desierto florido al bosque valdiviano, con la fuerza del territorio que habitamos.</p></div>
+        <div class="card"><div class="flower">✨</div><h3>Terapias energéticas</h3><p>Cuando las emociones se quedan pegadas en el cuerpo, el trabajo energético ayuda a destrabar, ordenar y devolver el flujo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="adaba" style="padding-top:0">
+    <div class="wrap">
+      <div class="card" style="border:2px solid var(--sage); padding:2.2rem 2rem">
+        <span class="eyebrow">Creación propia</span>
+        <h2>ADABA — movimiento de la mente profunda</h2>
+        <p><strong>ADABA</strong> es la terapia energética que Sofía desarrolló en Chile a lo largo de más de 20 años de atención a pacientes, uniendo su formación médica en la Universidad de Chile con técnicas de meditación y percepción del campo energético.</p>
+        <p>A través de la imposición de manos, la terapeuta percibe y moviliza las estructuras del campo energético, aumentando la consciencia de ti mism@ y destrabando temas emocionales de largo tiempo. La base es lo que ADABA llama la <em>actitud plateada</em>: aceptar e integrar tanto la luz como la sombra que habitan en nosotros — sanar es aprender a vivir bien.</p>
+        <a class="btn primary" href="agendar.html">Agendar una sesión ADABA</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="botiquin">
+    <div class="wrap">
+      <span class="eyebrow">Interactivo</span>
+      <h2>Botiquín emocional express</h2>
+      <p>¿Cómo amaneciste hoy? Elige lo que más se parezca a tu estado y te muestro una esencia que suele acompañar ese momento. Es una probadita de cómo funciona la terapia floral.</p>
+      <div class="chips" id="chips" role="group" aria-label="Elige tu estado emocional"></div>
+      <div class="receta" id="receta" hidden aria-live="polite">
+        <span class="sistema" id="r-sistema"></span>
+        <p class="esencia" id="r-esencia"></p>
+        <p id="r-desc"></p>
+        <p class="nota">🌿 Esto es solo una pincelada: la mezcla real se prepara en sesión, conversando y mirando el cuadro completo. Ninguna esencia reemplaza atención médica profesional.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">La Sofi al aire</span>
+      <h2>Un consultorio con alma de radio</h2>
+      <p>Antes de que existieran los podcasts de bienestar, ya estaba la Sofi al micrófono. Más de 160 capítulos sobre emociones, crianza, duelos y la vida misma.</p>
+      <div class="panel">
+        <div class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div>
+          <div class="stat-row">
+            <div class="stat"><b>160+</b><span>capítulos del podcast</span></div>
+            <div class="stat"><b>157 mil</b><span>reproducciones de "Entender la Depresión"</span></div>
+            <div class="stat"><b>12 mil</b><span>personas en la comunidad</span></div>
+          </div>
+          <p style="margin-top:1rem"><a href="escuchame.html">Ir a la radioteca →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="contacto" style="padding-bottom:3rem">
+    <div class="wrap">
+      <span class="eyebrow">Contacto</span>
+      <h2>Conversemos</h2>
+      <p>Sesiones de terapia floral, energética o ADABA — online o presenciales. ¿Prefieres escribir directo? También sirve.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="agendar.html">📅 Agendar online</a>
+        <a class="btn" href="mailto:laconsultadelasofi@gmail.com">✉️ Escribir un correo</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ponytail: footer duplicado en las 4 páginas. Si cambia, cambiarlo en las 4. -->
+<footer>
+  <div class="wrap">
+    <h2 style="font-size:1.3rem">La Consulta de la Sofi</h2>
+    <p style="opacity:.85">Educación emocional para una vida rica y feliz.</p>
+    <ul class="links">
+      <li><a class="ico-link" href="https://www.facebook.com/LaConsultaDeLaSofi" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a></li>
+      <li><a class="ico-link" href="https://www.youtube.com/@LaConsultadelaSofi" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.92 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.41z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>YouTube</a></li>
+      <li><a class="ico-link" href="https://www.instagram.com/laconsultadelasofi/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</a></li>
+      <li><a class="ico-link" href="mailto:laconsultadelasofi@gmail.com"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>Correo</a></li>
+    </ul>
+    <small>Propuesta de diseño — hecha con cariño para Sofía Vera · Las esencias florales complementan y no reemplazan tratamientos médicos · Agendamiento e inscripciones en modo demostración.</small>
+  </div>
+</footer>
+
+<script src="js/datos.js" defer></script>
+<script src="js/botiquin.js" defer></script>
+<script src="js/petalos.js" defer></script>
+</body>
+</html>

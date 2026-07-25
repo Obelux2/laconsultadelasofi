@@ -1,0 +1,208 @@
+
+  :root{
+    --paper:#EDDDC6; --paper-2:#E4CFB2; --ink:#4A3B30; --ink-soft:#6F5848;
+    --coral:#944E2E; --coral-soft:#EFD3BC; --peach:#E8B48E; --sage:#94A883; --sage-soft:#DDE2CE;
+    --sage-ink:#516544; --rose:#DBA79A; --onair:#C9564A;
+    --card:#F9F1E2; --line:#D3BEA0;
+    --radius:18px;
+  }
+  /* ponytail: single-theme deliberado — la marca de Sofi es papel arena y luz;
+     un modo oscuro café no la representa. color-scheme fijo en light. */
+  :root{color-scheme:light}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Segoe UI", system-ui, -apple-system, sans-serif;
+    font-size:17px; line-height:1.65;
+  }
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif; line-height:1.15; text-wrap:balance; margin:0 0 .4em}
+  h1{font-size:clamp(2.1rem,5.5vw,3.6rem); font-weight:700}
+  h2{font-size:clamp(1.5rem,3.5vw,2.2rem)}
+  h3{font-size:1.15rem}
+  p{margin:.4em 0 1em; max-width:62ch}
+  a{color:var(--coral)}
+  .eyebrow{
+    display:inline-block; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--sage-ink); font-weight:700; margin-bottom:.7em;
+  }
+  section{padding:4rem 1.4rem}
+  .wrap{max-width:1020px; margin:0 auto}
+
+  /* ---------- nav / router ---------- */
+  nav{
+    position:sticky; top:0; z-index:20; backdrop-filter:blur(8px);
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex; align-items:center; gap:.9rem; padding:.55rem 1.4rem; max-width:1020px; flex-wrap:wrap}
+  nav .brand{font-family:Georgia,serif; font-weight:700; font-size:1.02rem; color:var(--ink); text-decoration:none; margin-right:auto}
+  nav a.link{color:var(--ink-soft); text-decoration:none; font-size:.92rem; padding:.3rem .15rem; border-bottom:2px solid transparent}
+  nav a.link:hover{color:var(--coral)}
+  nav a.link[aria-current="page"]{color:var(--coral); border-bottom-color:var(--coral)}
+  @media (max-width:640px){
+    nav .wrap{justify-content:center; gap:.15rem 1.1rem; padding:.5rem 1rem}
+    nav .brand{flex-basis:100%; margin:0 0 .15rem; text-align:center}
+    nav a.link{padding:.45rem .25rem}
+  }
+  main{display:block; animation:fadein .35s ease}
+  @keyframes fadein{from{opacity:0; transform:translateY(8px)}to{opacity:1}}
+  @media (prefers-reduced-motion:reduce){ main{animation:none} }
+
+  /* aviso cuando datos/*.json no carga: nunca dejar la sección en blanco */
+  .aviso-carga{background:var(--card); border:1px dashed var(--coral); border-radius:14px;
+    padding:1rem 1.2rem; color:var(--ink-soft); font-size:.95rem}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative; overflow:hidden; padding:4.5rem 1.4rem 4rem; background:
+    radial-gradient(60rem 30rem at 110% -10%, var(--sage-soft), transparent 60%),
+    radial-gradient(50rem 26rem at -20% 110%, var(--coral-soft), transparent 55%),
+    var(--paper);}
+  .hero .wrap{display:grid; grid-template-columns:1.2fr .8fr; gap:2.5rem; align-items:center; position:relative}
+  @media (max-width:760px){ .hero .wrap{grid-template-columns:1fr} }
+  .onair{
+    display:inline-flex; align-items:center; gap:.5em; background:var(--onair); color:#fff;
+    font-weight:700; font-size:.8rem; letter-spacing:.14em; padding:.35em 1em; border-radius:8px;
+    transform:rotate(-2deg); box-shadow:0 4px 14px color-mix(in srgb, var(--onair) 35%, transparent);
+  }
+  .onair .dot{width:.55em;height:.55em;border-radius:50%;background:#fff;animation:blink 1.6s infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+  @media (prefers-reduced-motion:reduce){ .onair .dot,.eq span{animation:none !important} }
+  .hero h1 em{font-style:italic; color:var(--coral)}
+  .hero .sub{font-size:1.12rem; color:var(--ink-soft)}
+  .avatar-ring{
+    justify-self:center; width:min(300px,70vw); aspect-ratio:1; border-radius:50%;
+    padding:10px; background:conic-gradient(from 20deg, var(--peach), var(--rose), var(--sage), var(--peach));
+  }
+  .avatar-ring img{width:100%; height:100%; border-radius:50%; object-fit:cover; display:block; background:#fff}
+  .cta-row{display:flex; gap:.8rem; flex-wrap:wrap; margin-top:1.4rem}
+  .btn{
+    display:inline-block; text-decoration:none; font-weight:600; border-radius:999px;
+    padding:.65em 1.5em; border:2px solid var(--coral); transition:transform .15s ease;
+    cursor:pointer; font-family:inherit; font-size:1rem; background:none; color:var(--coral);
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn.primary{background:var(--coral); color:#fff}
+  .btn.small{font-size:.85rem; padding:.4em 1.1em}
+  .btn:disabled{opacity:.45; cursor:not-allowed; transform:none}
+  .hero .credo{margin-top:2rem; font-family:Georgia,serif; font-style:italic; color:var(--ink-soft); border-left:3px solid var(--sage); padding-left:1em}
+
+  /* ---------- cards / grids ---------- */
+  .alt{background:var(--paper-2)}
+  .grid{display:grid; gap:1.2rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin-top:1.5rem}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:1.4rem 1.3rem; position:relative;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .card:hover{
+    transform:translateY(-4px); border-color:var(--peach);
+    box-shadow:0 10px 24px color-mix(in srgb, var(--ink) 12%, transparent);
+  }
+  @media (prefers-reduced-motion:reduce){ .card, .card:hover{transform:none; transition:none} }
+  .card .flower{font-size:1.6rem; line-height:1; margin-bottom:.5rem}
+  .card h3{margin-bottom:.3em}
+  .card p{font-size:.93rem; color:var(--ink-soft); margin-bottom:0}
+
+  /* ---------- botiquín ---------- */
+  .chips{display:flex; flex-wrap:wrap; gap:.6rem; margin:1.4rem 0}
+  .chip{
+    border:1.5px solid var(--line); background:var(--card); color:var(--ink);
+    border-radius:999px; padding:.5em 1.2em; font-size:.95rem; cursor:pointer;
+    font-family:inherit; transition:all .15s ease;
+  }
+  .chip:hover{border-color:var(--sage); transform:translateY(-1px)}
+  .chip[aria-pressed="true"]{background:var(--sage-ink); border-color:var(--sage-ink); color:#fff}
+  .chip:focus-visible,.btn:focus-visible,a:focus-visible,.dia:focus-visible{outline:3px solid var(--ink); outline-offset:2px}
+  .receta{
+    margin-top:1rem; background:var(--card); border:1px dashed var(--sage); border-radius:var(--radius);
+    padding:1.5rem 1.6rem;
+  }
+  .receta[hidden]{display:none}
+  .receta .esencia{font-family:Georgia,serif; font-size:1.5rem; color:var(--coral); margin:0 0 .15em}
+  .receta .sistema{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--sage-ink); font-weight:700}
+  .receta p{margin:.6em 0 0}
+  .receta .nota{font-size:.85rem; color:var(--ink-soft); font-style:italic}
+
+  /* ---------- podcast / radioteca ---------- */
+  .eq{display:flex; align-items:flex-end; gap:5px; height:64px}
+  .eq span{width:9px; background:var(--peach); border-radius:4px 4px 0 0; animation:eq 1.1s ease-in-out infinite}
+  .eq span:nth-child(2){animation-delay:.15s; background:var(--rose)}
+  .eq span:nth-child(3){animation-delay:.3s; background:var(--sage)}
+  .eq span:nth-child(4){animation-delay:.45s; background:var(--peach)}
+  .eq span:nth-child(5){animation-delay:.6s; background:var(--rose)}
+  .eq span:nth-child(6){animation-delay:.75s; background:var(--sage)}
+  @keyframes eq{0%,100%{height:18%}50%{height:100%}}
+  .panel{
+    display:grid; grid-template-columns:auto 1fr; gap:1.6rem; align-items:center;
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:1.8rem;
+  }
+  @media (max-width:640px){ .panel{grid-template-columns:1fr} }
+  .stat-row{display:flex; gap:2.2rem; flex-wrap:wrap; margin-top:1rem}
+  .stat b{font-family:Georgia,serif; font-size:1.7rem; color:var(--coral); font-variant-numeric:tabular-nums}
+  .stat span{display:block; font-size:.83rem; color:var(--ink-soft)}
+  .dial-card{display:block; text-decoration:none; color:var(--ink)}
+  .dial-card .freq{
+    font-family:Consolas,monospace; font-size:.8rem; color:var(--coral); letter-spacing:.1em;
+    border:1px solid var(--line); border-radius:6px; padding:.15em .6em; display:inline-block; margin-bottom:.6rem;
+    background:var(--paper);
+  }
+  .dial-card:hover{border-color:var(--coral)}
+  .dial-card .dur{font-size:.8rem; color:var(--ink-soft)}
+  .dial-line{height:6px; border-radius:3px; margin-top:.9rem;
+    background:repeating-linear-gradient(90deg, var(--line) 0 2px, transparent 2px 12px);
+    position:relative}
+  .dial-line i{position:absolute; top:-4px; width:3px; height:14px; background:var(--coral); border-radius:2px}
+
+  /* ---------- talleres ---------- */
+  .taller-card{display:flex; flex-direction:column; gap:.4rem}
+  .taller-card .tag{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); font-weight:700}
+  .taller-card .meta{display:flex; gap:1.2rem; flex-wrap:wrap; font-size:.88rem; color:var(--ink-soft); margin:.4rem 0 .8rem}
+  .taller-card .meta b{color:var(--ink)}
+  .taller-card .precio{font-family:Georgia,serif; font-size:1.25rem; color:var(--coral)}
+  .cupos{display:inline-block; font-size:.78rem; background:var(--sage-soft); color:var(--ink); border-radius:999px; padding:.2em .9em; font-weight:600}
+  .cupos.pocos{background:var(--coral-soft)}
+  .inscrito{border:1px dashed var(--sage); border-radius:12px; padding:.8rem 1rem; font-size:.9rem; margin-top:.6rem}
+  .inscrito[hidden]{display:none}
+  .demo-badge{
+    display:inline-block; font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; font-weight:700;
+    background:var(--rose); color:var(--ink); border-radius:6px; padding:.2em .7em; transform:rotate(-1.5deg);
+  }
+
+  /* ---------- agendar ---------- */
+  .pasos{display:flex; gap:.5rem; align-items:center; flex-wrap:wrap; margin:1.2rem 0 1.8rem; font-size:.85rem; color:var(--ink-soft)}
+  .paso{display:flex; align-items:center; gap:.45em}
+  .paso .n{width:1.7em;height:1.7em;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--line);font-weight:700;background:var(--card)}
+  .paso.done .n{background:var(--sage-ink); border-color:var(--sage-ink); color:#fff}
+  .paso.now .n{background:var(--coral); border-color:var(--coral); color:#fff}
+  .pasos .sep{width:2rem;height:1px;background:var(--line)}
+  .agenda-box{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:1.8rem}
+  .cal{display:grid; grid-template-columns:repeat(7,1fr); gap:.35rem; max-width:26rem; margin-top:1rem}
+  .cal .dow{font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); text-align:center; font-weight:700}
+  .dia{
+    aspect-ratio:1; border:1.5px solid transparent; border-radius:10px; display:grid; place-items:center;
+    font-size:.92rem; background:none; cursor:pointer; font-family:inherit; color:var(--ink);
+    font-variant-numeric:tabular-nums;
+  }
+  .dia:not(:disabled):hover{border-color:var(--sage)}
+  .dia:disabled{color:color-mix(in srgb, var(--ink-soft) 45%, transparent); cursor:default}
+  .dia[aria-pressed="true"]{background:var(--coral); color:#fff; font-weight:700}
+  .dia.hoy{border-color:var(--line)}
+  .horas{margin-top:1rem}
+  .confirmacion{border:1px dashed var(--sage); border-radius:var(--radius); padding:1.6rem; margin-top:1rem}
+  .confirmacion[hidden]{display:none}
+  .confirmacion h3{color:var(--coral)}
+  .resumen{list-style:none; padding:0; margin:.8rem 0; max-width:30rem}
+  .resumen li{padding:.3rem 0; border-bottom:1px dotted var(--line)}
+  .resumen b{font-family:Georgia,serif}
+
+  /* ---------- footer ---------- */
+  footer{background:#4A3B30; color:#F2E8DA; padding:3.5rem 1.4rem 2.5rem; border-top:1px solid var(--line)}
+  footer h2{color:inherit}
+  footer a{color:var(--peach)}
+  footer .links{display:flex; gap:1.6rem; flex-wrap:wrap; margin:1.2rem 0 2rem; padding:0; list-style:none}
+  footer small{opacity:.7}
+  .ico-link{display:inline-flex; align-items:center; gap:.45em}
+  .ico{width:1.1em; height:1.1em; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex:none}
+
+  #petals{position:absolute; inset:0; pointer-events:none}

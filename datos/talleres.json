@@ -1,0 +1,29 @@
+[
+  {
+    "tag": "Taller online · 2 sesiones",
+    "nom": "Flores para el Aquí y el Ahora",
+    "desc": "Esencias florales y presencia: aprender a habitar el momento en que estamos, sin arrancarse al pasado ni al futuro.",
+    "fecha": "Martes 4 y 11 de agosto",
+    "hora": "20:00–21:30 hrs",
+    "precio": "$25.000",
+    "cupos": 8
+  },
+  {
+    "tag": "Taller online · 3 sesiones",
+    "nom": "Nutrientes, Vitaminas y Flores",
+    "desc": "El bienestar se cocina por dentro y por fuera: nutrición y esencias florales trabajando en equipo.",
+    "fecha": "Viernes 14, 21 y 28 de agosto",
+    "hora": "20:00 hrs",
+    "precio": "$30.000",
+    "cupos": 3
+  },
+  {
+    "tag": "Curso breve grabado",
+    "nom": "Las Enseñanzas del Zapallo",
+    "desc": "Un curso breve y motivador — porque hasta un zapallo tiene cosas que enseñarnos sobre crecer a nuestro ritmo.",
+    "fecha": "A tu ritmo",
+    "hora": "3 cápsulas + guía",
+    "precio": "$15.000",
+    "cupos": 99
+  }
+]
