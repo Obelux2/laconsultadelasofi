@@ -1,0 +1,8 @@
+# Mientras el sitio viva en la URL provisoria de GitHub Pages, no se indexa.
+# El sitio definitivo es laconsultadelasofi.cl: no queremos que Google encuentre
+# primero una dirección que va a desaparecer, ni con contenido que todavía no es
+# el final.
+#
+# QUITAR ESTO en HU-16 (SEO), cuando el dominio ya esté apuntando.
+User-agent: *
+Disallow: /
