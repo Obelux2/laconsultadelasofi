@@ -103,6 +103,12 @@
   .card .flower{font-size:1.6rem; line-height:1; margin-bottom:.5rem}
   .card h3{margin-bottom:.3em}
   .card p{font-size:.93rem; color:var(--ink-soft); margin-bottom:0}
+  .card .btn{margin-top:1.1rem}
+
+  /* ---------- testimonios ---------- */
+  .rating{color:var(--coral); font-size:1.7rem; letter-spacing:.1em; line-height:1; white-space:nowrap}
+  .testi{font-family:Georgia,serif; font-style:italic; font-size:1.02rem; line-height:1.5}
+  .testi-quien{font-size:.82rem; color:var(--ink-soft); margin-top:.9rem}
 
   /* ---------- botiquín ---------- */
   .chips{display:flex; flex-wrap:wrap; gap:.6rem; margin:1.4rem 0}
@@ -159,7 +165,8 @@
   .taller-card .tag{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); font-weight:700}
   .taller-card .meta{display:flex; gap:1.2rem; flex-wrap:wrap; font-size:.88rem; color:var(--ink-soft); margin:.4rem 0 .8rem}
   .taller-card .meta b{color:var(--ink)}
-  .taller-card .precio{font-family:Georgia,serif; font-size:1.25rem; color:var(--coral)}
+  /* ponytail: .precio global — lo comparten talleres y las tarjetas de aporte */
+  .precio{font-family:Georgia,serif; font-size:1.25rem; color:var(--coral)}
   .cupos{display:inline-block; font-size:.78rem; background:var(--sage-soft); color:var(--ink); border-radius:999px; padding:.2em .9em; font-weight:600}
   .cupos.pocos{background:var(--coral-soft)}
   /* Sección sin contenido todavía: no es un error, así que se ve tranquila. */
@@ -167,7 +174,9 @@
     padding:1.2rem 1.4rem; color:var(--ink-soft); max-width:38rem}
 
   /* ---------- agendar ---------- */
-  .nota-agenda{font-size:.92rem; color:var(--ink-soft); font-style:italic; margin-top:1.4rem; max-width:38rem}
+  /* .nota-agenda: aparte, en itálica. .nota-pie: letra chica factual (fuentes, condiciones) */
+  .nota-agenda,.nota-pie{font-size:.92rem; color:var(--ink-soft); font-style:italic; margin-top:1.4rem; max-width:38rem}
+  .nota-pie{font-style:normal; max-width:60ch}
 
   /* ---------- footer ---------- */
   footer{background:#4A3B30; color:#F2E8DA; padding:3.5rem 1.4rem 2.5rem; border-top:1px solid var(--line)}
