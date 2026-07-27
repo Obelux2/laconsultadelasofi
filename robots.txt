@@ -6,3 +6,8 @@
 # QUITAR ESTO en HU-16 (SEO), cuando el dominio ya esté apuntando.
 User-agent: *
 Disallow: /
+
+# El sitemap ya está escrito y queda declarado desde ahora, para que el día que
+# se levante el Disallow no haya que acordarse de esta línea. Mientras tanto no
+# lo lee nadie: el bloqueo de arriba manda.
+Sitemap: https://obelux2.github.io/laconsultadelasofi/sitemap.xml
