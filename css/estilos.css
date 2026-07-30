@@ -192,4 +192,27 @@
   .ico-link{display:inline-flex; align-items:center; gap:.45em}
   .ico{width:1.1em; height:1.1em; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex:none}
 
+  /* ---------- línea de tiempo (sobre-mi.html) ---------- */
+  /* ponytail: <ol> con un riel de borde y puntos en ::before. Sin librería,
+     sin JS: son ~5 hitos estáticos. */
+  .timeline{list-style:none; margin:2rem 0 0; padding:0 0 0 1.8rem; max-width:62ch;
+    border-left:2px solid var(--line)}
+  .timeline li{position:relative; padding-bottom:2rem}
+  .timeline li:last-child{padding-bottom:0}
+  .timeline li::before{
+    content:""; position:absolute; left:calc(-1.8rem - 7px); top:.45em;
+    width:12px; height:12px; border-radius:50%;
+    background:var(--coral); border:2px solid var(--paper);
+  }
+  .timeline .cuando{
+    display:block; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--sage-ink); font-weight:700; margin-bottom:.2em;
+  }
+  .timeline .hito{font-family:Georgia,serif; font-size:1.15rem; color:var(--ink); margin:0 0 .3em}
+  .timeline p{margin:0; font-size:.95rem; color:var(--ink-soft)}
+  @media (max-width:640px){
+    .timeline{padding-left:1.3rem}
+    .timeline li::before{left:calc(-1.3rem - 7px)}
+  }
+
   #petals{position:absolute; inset:0; pointer-events:none}
