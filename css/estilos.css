@@ -15,6 +15,9 @@
     margin:0; background:var(--paper); color:var(--ink);
     font-family:"Segoe UI", system-ui, -apple-system, sans-serif;
     font-size:17px; line-height:1.65;
+    /* hereda a todo: los tamaños van en rem y crecen si el usuario sube la
+       letra; sin esto, al 200% las palabras largas empujaban scroll horizontal */
+    overflow-wrap:break-word;
   }
   h1,h2,h3{font-family:Georgia,"Times New Roman",serif; line-height:1.15; text-wrap:balance; margin:0 0 .4em}
   h1{font-size:clamp(2.1rem,5.5vw,3.6rem); font-weight:700}
@@ -24,7 +27,7 @@
   a{color:var(--coral)}
   .eyebrow{
     display:inline-block; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
-    color:var(--sage-ink); font-weight:700; margin-bottom:.7em;
+    color:var(--sage-ink); font-weight:700; margin-bottom:.7em; max-width:100%;
   }
   section{padding:4rem 1.4rem}
   .wrap{max-width:1020px; margin:0 auto}
@@ -54,11 +57,16 @@
     padding:1rem 1.2rem; color:var(--ink-soft); font-size:.95rem}
 
   /* ---------- hero ---------- */
-  .hero{position:relative; overflow:hidden; padding:4.5rem 1.4rem 4rem; background:
+  /* sin overflow:hidden — al 200% de zoom recortaba el h1 y los párrafos sin
+     dejar scrollbar, o sea el texto quedaba inalcanzable (WCAG 1.4.4) */
+  .hero{position:relative; padding:4.5rem 1.4rem 4rem; background:
     radial-gradient(60rem 30rem at 110% -10%, var(--sage-soft), transparent 60%),
     radial-gradient(50rem 26rem at -20% 110%, var(--coral-soft), transparent 55%),
     var(--paper);}
   .hero .wrap{display:grid; grid-template-columns:1.2fr .8fr; gap:2.5rem; align-items:center; position:relative}
+  /* un ítem de grid no se encoge bajo su contenido mínimo: sin esto una palabra
+     larga del h1 estiraba la columna en vez de partirse */
+  .hero .wrap > *{min-width:0}
   @media (max-width:760px){ .hero .wrap{grid-template-columns:1fr} }
   .onair{
     display:inline-flex; align-items:center; gap:.5em; background:var(--onair); color:#fff;
@@ -80,6 +88,7 @@
     display:inline-block; text-decoration:none; font-weight:600; border-radius:999px;
     padding:.65em 1.5em; border:2px solid var(--coral); transition:transform .15s ease;
     cursor:pointer; font-family:inherit; font-size:1rem; background:none; color:var(--coral);
+    max-width:100%; /* etiquetas largas envuelven en vez de desbordar la pantalla */
   }
   .btn:hover{transform:translateY(-2px)}
   .btn.primary{background:var(--coral); color:#fff}
@@ -88,11 +97,20 @@
   .hero .credo{margin-top:2rem; font-family:Georgia,serif; font-style:italic; color:var(--ink-soft); border-left:3px solid var(--sage); padding-left:1em}
 
   /* ---------- cards / grids ---------- */
-  .alt{background:var(--paper-2)}
-  .grid{display:grid; gap:1.2rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin-top:1.5rem}
+  /* Sobre --paper-2 (12% más oscuro que --paper) los tres tokens de texto caían
+     bajo AA: coral 4.09, sage-ink 4.21, ink-soft 4.38. Se redefinen en el scope
+     de .alt en vez de aclarar el fondo — aclararlo lo suficiente lo dejaba
+     igual a --paper y la alternancia de secciones desaparecía. */
+  .alt{
+    background:var(--paper-2);
+    --coral:#8A4829; --sage-ink:#4B5D3E; --ink-soft:#685343;
+  }
+  /* min(220px,100%): el mínimo fijo generaba scroll horizontal a 320px */
+  .grid{display:grid; gap:1.2rem; grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr)); margin-top:1.5rem}
   .card{
     background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
     padding:1.4rem 1.3rem; position:relative;
+    display:flex; flex-direction:column;
     transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
   }
   .card:hover{
@@ -102,11 +120,22 @@
   @media (prefers-reduced-motion:reduce){ .card, .card:hover{transform:none; transition:none} }
   .card .flower{font-size:1.6rem; line-height:1; margin-bottom:.5rem}
   .card h3{margin-bottom:.3em}
-  .card p{font-size:.93rem; color:var(--ink-soft); margin-bottom:0}
-  .card .btn{margin-top:1.1rem}
+  .card p{font-size:.93rem; color:var(--ink-soft); margin-bottom:0; flex:1}
+  /* el párrafo absorbe el sobrante (flex:1 arriba) y empuja el botón al fondo:
+     así dos tarjetas hermanas con textos de distinto largo alinean sus botones */
+  .card .btn{margin-top:1.1rem; align-self:flex-start}
+
+  /* lista de formas de colaborar (colaborar.html) — prosa, no tarjetas: no son
+     opciones que se elijan, son ejemplos que se leen */
+  .formas{list-style:none; padding:0; margin:1.4rem 0 1.6rem; max-width:62ch}
+  .formas li{padding:0 0 0 1.4rem; margin-bottom:1rem; position:relative; color:var(--ink-soft)}
+  .formas li::before{content:"—"; position:absolute; left:0; color:var(--coral)}
+  .formas strong{color:var(--ink)}
 
   /* ---------- testimonios ---------- */
-  .rating{color:var(--coral); font-size:1.7rem; letter-spacing:.1em; line-height:1; white-space:nowrap}
+  /* techo en px: las estrellas van en nowrap (partirlas se leería como nota
+     menor) y al 200% desbordaban. Decorativas: el "5,0" va al lado y sí escala */
+  .rating{color:var(--coral); font-size:min(1.7rem,40px); letter-spacing:.1em; line-height:1; white-space:nowrap}
   .testi{font-family:Georgia,serif; font-style:italic; font-size:1.02rem; line-height:1.5}
   .testi-quien{font-size:.82rem; color:var(--ink-soft); margin-top:.9rem}
 
@@ -167,6 +196,9 @@
   .taller-card .meta b{color:var(--ink)}
   /* ponytail: .precio global — lo comparten talleres y las tarjetas de aporte */
   .precio{font-family:Georgia,serif; font-size:1.25rem; color:var(--coral)}
+  /* el precio iba más grande que el nombre del plan (1.25 vs 1.15rem) y la
+     sección se leía como tarifario en vez de invitación: acá manda el nombre */
+  .precio.aporte{font-size:.98rem; color:var(--ink-soft); font-family:inherit}
   .cupos{display:inline-block; font-size:.78rem; background:var(--sage-soft); color:var(--ink); border-radius:999px; padding:.2em .9em; font-weight:600}
   .cupos.pocos{background:var(--coral-soft)}
   /* Sección sin contenido todavía: no es un error, así que se ve tranquila. */
