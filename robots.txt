@@ -10,4 +10,4 @@ Disallow: /
 # El sitemap ya está escrito y queda declarado desde ahora, para que el día que
 # se levante el Disallow no haya que acordarse de esta línea. Mientras tanto no
 # lo lee nadie: el bloqueo de arriba manda.
-Sitemap: https://obelux2.github.io/laconsultadelasofi/sitemap.xml
+Sitemap: https://laconsultadelasofi.cl/sitemap.xml
