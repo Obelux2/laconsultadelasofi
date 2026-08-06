@@ -59,7 +59,7 @@
   /* ---------- hero ---------- */
   /* sin overflow:hidden — al 200% de zoom recortaba el h1 y los párrafos sin
      dejar scrollbar, o sea el texto quedaba inalcanzable (WCAG 1.4.4) */
-  .hero{position:relative; padding:4.5rem 1.4rem 4rem; background:
+  .hero{position:relative; padding:4.5rem 1.4rem 4.5rem; background:
     radial-gradient(60rem 30rem at 110% -10%, var(--sage-soft), transparent 60%),
     radial-gradient(50rem 26rem at -20% 110%, var(--coral-soft), transparent 55%),
     var(--paper);}
@@ -247,4 +247,4 @@
     .timeline li::before{left:calc(-1.3rem - 7px)}
   }
 
-  #petals{position:absolute; inset:0; pointer-events:none}
+  #petals{position:absolute; inset:0; width:100%; height:100%; pointer-events:none}
