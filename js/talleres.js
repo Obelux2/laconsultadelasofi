@@ -4,7 +4,7 @@
    El botón de inscripción lleva a un canal real: no existe inscripción que
    ocurra dentro del sitio. */
 
-const CORREO = 'laconsultadelasofi@gmail.com';
+const CORREO = 'contacto@laconsultadelasofi.cl';
 
 cargarDatos('talleres.json', 'lista-talleres', (talleres, lista) => {
   if (!talleres.length) {

@@ -6,7 +6,7 @@
 const AVISO_CARGA =
   '<p class="aviso-carga">No pudimos cargar esta sección. Recarga la página, ' +
   'y si sigue igual escríbele a la Sofi a ' +
-  '<a href="mailto:laconsultadelasofi@gmail.com">laconsultadelasofi@gmail.com</a>.</p>';
+  '<a href="mailto:contacto@laconsultadelasofi.cl">contacto@laconsultadelasofi.cl</a>.</p>';
 
 /* El navegador resuelve el ancla (#botiquin) apenas parsea el HTML, cuando la
    sección todavía está vacía. Al llegar los datos la página crece y el visitante
