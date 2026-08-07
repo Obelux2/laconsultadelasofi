@@ -1,13 +1,6 @@
-# Mientras el sitio viva en la URL provisoria de GitHub Pages, no se indexa.
-# El sitio definitivo es laconsultadelasofi.cl: no queremos que Google encuentre
-# primero una dirección que va a desaparecer, ni con contenido que todavía no es
-# el final.
-#
-# QUITAR ESTO en HU-16 (SEO), cuando el dominio ya esté apuntando.
+# laconsultadelasofi.cl es el dominio definitivo (confirmado y publicado el
+# 2026-08-06). Indexable desde el 2026-08-06 — decisión de Francisco (HU-06).
 User-agent: *
-Disallow: /
+Allow: /
 
-# El sitemap ya está escrito y queda declarado desde ahora, para que el día que
-# se levante el Disallow no haya que acordarse de esta línea. Mientras tanto no
-# lo lee nadie: el bloqueo de arriba manda.
 Sitemap: https://laconsultadelasofi.cl/sitemap.xml
