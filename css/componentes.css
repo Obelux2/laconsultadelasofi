@@ -1,61 +1,4 @@
 
-  :root{
-    --paper:#EDDDC6; --paper-2:#E4CFB2; --ink:#4A3B30; --ink-soft:#6F5848;
-    --coral:#944E2E; --coral-soft:#EFD3BC; --peach:#E8B48E; --sage:#94A883; --sage-soft:#DDE2CE;
-    --sage-ink:#516544; --rose:#DBA79A; --onair:#C9564A;
-    --card:#F9F1E2; --line:#D3BEA0;
-    --radius:18px;
-  }
-  /* ponytail: single-theme deliberado — la marca de Sofi es papel arena y luz;
-     un modo oscuro café no la representa. color-scheme fijo en light. */
-  :root{color-scheme:light}
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0; background:var(--paper); color:var(--ink);
-    font-family:"Segoe UI", system-ui, -apple-system, sans-serif;
-    font-size:17px; line-height:1.65;
-    /* hereda a todo: los tamaños van en rem y crecen si el usuario sube la
-       letra; sin esto, al 200% las palabras largas empujaban scroll horizontal */
-    overflow-wrap:break-word;
-  }
-  h1,h2,h3{font-family:Georgia,"Times New Roman",serif; line-height:1.15; text-wrap:balance; margin:0 0 .4em}
-  h1{font-size:clamp(2.1rem,5.5vw,3.6rem); font-weight:700}
-  h2{font-size:clamp(1.5rem,3.5vw,2.2rem)}
-  h3{font-size:1.15rem}
-  p{margin:.4em 0 1em; max-width:62ch}
-  a{color:var(--coral)}
-  .eyebrow{
-    display:inline-block; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
-    color:var(--sage-ink); font-weight:700; margin-bottom:.7em; max-width:100%;
-  }
-  section{padding:4rem 1.4rem}
-  .wrap{max-width:1020px; margin:0 auto}
-
-  /* ---------- nav / router ---------- */
-  nav{
-    position:sticky; top:0; z-index:20; backdrop-filter:blur(8px);
-    background:color-mix(in srgb, var(--paper) 88%, transparent);
-    border-bottom:1px solid var(--line);
-  }
-  nav .wrap{display:flex; align-items:center; gap:.9rem; padding:.55rem 1.4rem; max-width:1020px; flex-wrap:wrap}
-  nav .brand{font-family:Georgia,serif; font-weight:700; font-size:1.02rem; color:var(--ink); text-decoration:none; margin-right:auto}
-  nav a.link{color:var(--ink-soft); text-decoration:none; font-size:.92rem; padding:.3rem .15rem; border-bottom:2px solid transparent}
-  nav a.link:hover{color:var(--coral)}
-  nav a.link[aria-current="page"]{color:var(--coral); border-bottom-color:var(--coral)}
-  @media (max-width:640px){
-    nav .wrap{justify-content:center; gap:.15rem 1.1rem; padding:.5rem 1rem}
-    nav .brand{flex-basis:100%; margin:0 0 .15rem; text-align:center}
-    nav a.link{padding:.45rem .25rem}
-  }
-  main{display:block; animation:fadein .35s ease}
-  @keyframes fadein{from{opacity:0; transform:translateY(8px)}to{opacity:1}}
-  @media (prefers-reduced-motion:reduce){ main{animation:none} }
-
-  /* aviso cuando datos/*.json no carga: nunca dejar la sección en blanco */
-  .aviso-carga{background:var(--card); border:1px dashed var(--coral); border-radius:14px;
-    padding:1rem 1.2rem; color:var(--ink-soft); font-size:.95rem}
-
   /* ---------- hero ---------- */
   /* sin overflow:hidden — al 200% de zoom recortaba el h1 y los párrafos sin
      dejar scrollbar, o sea el texto quedaba inalcanzable (WCAG 1.4.4) */
@@ -215,15 +158,6 @@
   .legal h3{margin-top:2.2rem; color:var(--sage-ink)}
   .legal ul{max-width:62ch; padding-left:1.2rem}
   .legal li{margin-bottom:.6em}
-
-  /* ---------- footer ---------- */
-  footer{background:#4A3B30; color:#F2E8DA; padding:3.5rem 1.4rem 2.5rem; border-top:1px solid var(--line)}
-  footer h2{color:inherit}
-  footer a{color:var(--peach)}
-  footer .links{display:flex; gap:1.6rem; flex-wrap:wrap; margin:1.2rem 0 2rem; padding:0; list-style:none}
-  footer small{opacity:.7}
-  .ico-link{display:inline-flex; align-items:center; gap:.45em}
-  .ico{width:1.1em; height:1.1em; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex:none}
 
   /* ---------- línea de tiempo (sobre-mi.html) ---------- */
   /* ponytail: <ol> con un riel de borde y puntos en ::before. Sin librería,
