@@ -3,48 +3,56 @@
     "emo": "😰 Ando con miedo",
     "sis": "Flores de Bach",
     "nom": "Mimulus",
-    "desc": "Para los miedos con nombre y apellido: a la pena, a hablar en público, a que algo salga mal. Mimulus ayuda a enfrentarlos con calma y valentía tranquila."
+    "desc": "Para los miedos con nombre y apellido: a la pena, a hablar en público, a que algo salga mal. Mimulus ayuda a enfrentarlos con calma y valentía tranquila.",
+    "img": "mimulus-ilustracion.jpg"
   },
   {
     "emo": "🌪️ Todo me sobrepasa",
     "sis": "Flores de Bach",
     "nom": "Rescue Remedy",
-    "desc": "La mezcla de emergencia clásica: cinco flores para los momentos en que el cuerpo dice 'no puedo más'. Un ancla mientras pasa la ola."
+    "desc": "La mezcla de emergencia clásica: cinco flores para los momentos en que el cuerpo dice 'no puedo más'. Un ancla mientras pasa la ola.",
+    "img": "star-of-bethlehem-ilustracion.jpg"
   },
   {
     "emo": "🥱 Estoy agotada/o",
     "sis": "Flores de Bach",
     "nom": "Olive",
-    "desc": "Para el cansancio profundo, el de cuerpo y alma después de un esfuerzo largo. Olive acompaña la recuperación de la energía vital."
+    "desc": "Para el cansancio profundo, el de cuerpo y alma después de un esfuerzo largo. Olive acompaña la recuperación de la energía vital.",
+    "img": "olive-ilustracion.jpg"
   },
   {
     "emo": "🌀 No paro de darle vueltas a algo",
     "sis": "Flores de Bach",
     "nom": "White Chestnut",
-    "desc": "Para la radio mental que no se apaga: pensamientos repetitivos que dan vueltas y vueltas. Devuelve el silencio interior."
+    "desc": "Para la radio mental que no se apaga: pensamientos repetitivos que dan vueltas y vueltas. Devuelve el silencio interior.",
+    "img": "white-chestnut-ilustracion.jpg"
   },
   {
     "emo": "🍂 Me cuesta soltar el pasado",
     "sis": "Flores de Bach",
     "nom": "Honeysuckle",
-    "desc": "Para la nostalgia que ancla: cuando el 'todo tiempo pasado fue mejor' no deja vivir el presente. Ayuda a mirar hacia adelante."
+    "desc": "Para la nostalgia que ancla: cuando el 'todo tiempo pasado fue mejor' no deja vivir el presente. Ayuda a mirar hacia adelante.",
+    "img": "honeysuckle-ilustracion.jpg"
   },
   {
     "emo": "🌊 Estoy en pleno cambio de vida",
     "sis": "Flores de Bach",
     "nom": "Walnut",
-    "desc": "La flor de las transiciones: mudanzas, separaciones, nuevos trabajos, etapas que terminan. Protege tu proceso de las influencias externas."
+    "desc": "La flor de las transiciones: mudanzas, separaciones, nuevos trabajos, etapas que terminan. Protege tu proceso de las influencias externas.",
+    "img": "walnut-ilustracion.jpg"
   },
   {
     "emo": "😔 Perdí la esperanza",
     "sis": "Flores de Bach",
     "nom": "Gorse",
-    "desc": "Para cuando parece que ya nada va a resultar. Gorse reenciende esa lucecita que permite volver a intentarlo."
+    "desc": "Para cuando parece que ya nada va a resultar. Gorse reenciende esa lucecita que permite volver a intentarlo.",
+    "img": "gorse-ilustracion.jpg"
   },
   {
     "emo": "💭 Vivo en las nubes",
     "sis": "Flores de Bach",
     "nom": "Clematis",
-    "desc": "Para quienes sueñan despiertos y les cuesta aterrizar en el aquí y el ahora. Trae los pies a la tierra sin cortar las alas."
+    "desc": "Para quienes sueñan despiertos y les cuesta aterrizar en el aquí y el ahora. Trae los pies a la tierra sin cortar las alas.",
+    "img": "clematis-ilustracion.jpg"
   }
 ]

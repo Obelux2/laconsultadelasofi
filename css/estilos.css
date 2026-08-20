@@ -158,6 +158,7 @@
   .receta .sistema{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--sage-ink); font-weight:700}
   .receta p{margin:.6em 0 0}
   .receta .nota{font-size:.85rem; color:var(--ink-soft); font-style:italic}
+  .receta #r-img{width:100%; max-width:220px; height:auto; border-radius:var(--radius); display:block}
 
   /* ---------- podcast / radioteca ---------- */
   .eq{display:flex; align-items:flex-end; gap:5px; height:64px}

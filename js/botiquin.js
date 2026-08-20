@@ -3,6 +3,7 @@
 cargarDatos('esencias.json', 'chips', (esencias, chips) => {
   if (!esencias.length) throw new Error('sin esencias');  // acá vacío sí es falla
   const receta = document.getElementById('receta');
+  const img = document.getElementById('r-img');
   esencias.forEach(e => {
     const b = document.createElement('button');
     b.className = 'chip'; b.textContent = e.emo; b.setAttribute('aria-pressed', 'false');
@@ -12,6 +13,8 @@ cargarDatos('esencias.json', 'chips', (esencias, chips) => {
       document.getElementById('r-sistema').textContent = e.sis;
       document.getElementById('r-esencia').textContent = '🌸 ' + e.nom;
       document.getElementById('r-desc').textContent = e.desc;
+      img.src = 'assets/flores/' + e.img;
+      img.alt = 'Ilustración de la flor ' + e.nom;
       receta.hidden = false;
     };
     chips.appendChild(b);
