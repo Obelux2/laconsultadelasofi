@@ -2,5 +2,6 @@
 # 2026-08-06). Indexable desde el 2026-08-06 — decisión de Francisco (HU-06).
 User-agent: *
 Allow: /
+Disallow: /micasa/
 
 Sitemap: https://laconsultadelasofi.cl/sitemap.xml

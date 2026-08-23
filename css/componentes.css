@@ -12,7 +12,10 @@
   .hero .wrap > *{min-width:0}
   @media (max-width:760px){ .hero .wrap{grid-template-columns:1fr} }
   .onair{
-    display:inline-flex; align-items:center; gap:.5em; background:var(--onair); color:#fff;
+    display:inline-flex; align-items:center; gap:.5em;
+    /* ponytail: #C9564A + texto blanco da 4.27:1, bajo el mínimo AA (4.5:1) a este
+       tamaño de texto. 5% más oscuro para pasar sin tocar el rojo de marca. */
+    background:color-mix(in srgb, var(--onair) 95%, black 5%); color:#fff;
     font-weight:700; font-size:.8rem; letter-spacing:.14em; padding:.35em 1em; border-radius:8px;
     transform:rotate(-2deg); box-shadow:0 4px 14px color-mix(in srgb, var(--onair) 35%, transparent);
   }
