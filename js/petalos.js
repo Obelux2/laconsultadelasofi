@@ -5,7 +5,7 @@ const cv = document.getElementById('petals');
 if (cv && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const ctx = cv.getContext('2d'); let W, H, petals = [];
   const colors = ['#E8B48E', '#DBA79A', '#9BAF8C', '#D9C08F'];
-  function resize() { W = cv.width = cv.offsetWidth; H = cv.height = cv.offsetHeight }
+  function resize() { const w = cv.offsetWidth, h = cv.offsetHeight; W = cv.width = w; H = cv.height = h }
   addEventListener('resize', resize); resize();
   const banda = () => W * .22; // solo caen por el borde izquierdo del hero
   for (let i = 0; i < 26; i++) petals.push({ x: Math.random() * banda(), y: Math.random() * 800, r: 4 + Math.random() * 6, s: .2 + Math.random() * .5, a: Math.random() * 6.3, c: colors[i % 4] });
