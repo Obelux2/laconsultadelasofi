@@ -36,6 +36,15 @@
      alterar el diseño ya aprobado */
   section .eyebrow + h1{font-size:clamp(1.5rem,3.5vw,2.2rem)}
 
+  /* ---------- skip link ---------- */
+  .skip-link{
+    position:absolute; left:1rem; top:-4rem; z-index:100;
+    background:var(--card); color:var(--ink); text-decoration:none; font-weight:600;
+    padding:.8em 1.4em; border-radius:8px; border:2px solid var(--coral);
+    transition:top .15s ease;
+  }
+  .skip-link:focus{top:1rem}
+
   /* ---------- nav / router ---------- */
   nav{
     position:sticky; top:0; z-index:20; backdrop-filter:blur(8px);
