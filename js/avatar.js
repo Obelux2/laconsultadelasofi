@@ -2,7 +2,7 @@
 (() => {
   const container = document.querySelector('[data-avatar-intro]');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  if (!container || reducedMotion.matches || navigator.connection?.saveData) return;
+  if (!container || reducedMotion.matches) return;
 
   let finished = false;
   let video;
@@ -13,8 +13,6 @@
     finished = true;
     clearTimeout(timeout);
     reducedMotion.removeEventListener('change', onMotionChange);
-    document.removeEventListener('visibilitychange', onVisibilityChange);
-    window.removeEventListener('pagehide', finish);
     if (!video) return;
     video.pause();
     video.remove();
@@ -22,10 +20,9 @@
     video.load();
   };
   const onMotionChange = () => { if (reducedMotion.matches) finish(); };
-  const onVisibilityChange = () => { if (document.hidden) finish(); };
 
   const start = () => {
-    if (finished || document.hidden || reducedMotion.matches) return;
+    if (finished || reducedMotion.matches) return;
     video = document.createElement('video');
     video.muted = true;
     video.defaultMuted = true;
@@ -35,11 +32,10 @@
     video.setAttribute('aria-hidden', 'true');
     video.setAttribute('tabindex', '-1');
     video.addEventListener('playing', () => video.classList.add('is-playing'), { once:true });
-    video.addEventListener('ended', finish, { once:true });
+    // Conservar el video detenido en su último fotograma, sin volver al retrato.
+    video.addEventListener('ended', () => clearTimeout(timeout), { once:true });
     video.addEventListener('error', finish, { once:true });
     reducedMotion.addEventListener('change', onMotionChange);
-    document.addEventListener('visibilitychange', onVisibilityChange);
-    window.addEventListener('pagehide', finish, { once:true });
     container.append(video);
     video.src = 'assets/sofi-avatar-intro.mp4';
     // Una descarga lenta nunca sustituye permanentemente la imagen original.
