@@ -185,4 +185,18 @@
     .timeline li::before{left:calc(-1.3rem - 7px)}
   }
 
+  /* ---------- "Por qué hago esto" (sobre-mi.html) ---------- */
+  /* Texto de Sofía, grave: bloque oscuro local a esta sección. No es dark mode
+     ni toca :root (decisión en proyecto/diseno.md, HU-25). */
+  section.manifiesto{background:#3E3128; color:#F3E7D5}
+  section.manifiesto h2, section.manifiesto strong{color:#fff}
+  section.manifiesto .eyebrow{color:#E8B48E}
+  section.manifiesto p{
+    font-family:Georgia,"Times New Roman",serif; font-size:1.14rem; line-height:1.72;
+    max-width:60ch; color:#F3E7D5;
+  }
+  section.manifiesto p:first-of-type::first-letter{
+    float:left; font-size:3.4rem; line-height:.86; padding:.06em .12em 0 0; color:#E8B48E;
+  }
+
   #petals{position:absolute; inset:0; width:100%; height:100%; pointer-events:none}
