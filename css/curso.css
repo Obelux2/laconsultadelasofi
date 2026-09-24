@@ -3,6 +3,7 @@
 
 .curso-intro{display:grid; grid-template-columns:1.3fr .7fr; gap:2.5rem; align-items:start}
 .curso-intro > *{min-width:0}
+.bajada{font-family:Georgia,serif; font-style:italic; font-size:1.25rem; color:var(--ink-soft); margin-top:-.2em}
 @media (max-width:760px){ .curso-intro{grid-template-columns:1fr} }
 
 /* video vertical de la invitación: tope de alto para que no ocupe toda la
