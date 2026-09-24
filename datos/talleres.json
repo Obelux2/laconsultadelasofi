@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "tag": "Curso · filosofía y psicología",
+    "nom": "Un abecedario para pensar",
+    "desc": "De la A a la Z por 27 conceptos: de la Angustia con Freud al Zaratustra de Nietzsche. No es necesario saber filosofía, solo tener ganas de pensar.",
+    "frecuencia": "Dos encuentros al mes",
+    "url": "curso-abecedario.html"
+  }
+]

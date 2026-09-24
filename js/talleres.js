@@ -4,7 +4,16 @@
    El botón de inscripción lleva a un canal real: no existe inscripción que
    ocurra dentro del sitio. */
 
-const CORREO = 'contacto@laconsultadelasofi.cl';
+// Inscripción por WhatsApp de Sofía, igual que el agendamiento (regla de
+// negocio en CLAUDE.md del proyecto).
+const WHATSAPP = 'https://wa.me/56928192203?text=';
+
+function textoCupos(n) {
+  if (typeof n !== 'number') return '';
+  if (n === 99) return 'Cupos ilimitados';
+  if (n <= 0) return 'Cupos agotados';
+  return n + ' cupos' + (n <= 4 ? ' — ¡quedan pocos!' : ' disponibles');
+}
 
 cargarDatos('talleres.json', 'lista-talleres', (talleres, lista) => {
   if (!talleres.length) {
@@ -19,14 +28,32 @@ cargarDatos('talleres.json', 'lista-talleres', (talleres, lista) => {
 
   talleres.forEach(t => {
     const d = document.createElement('div'); d.className = 'card taller-card';
-    const pocos = t.cupos <= 4 && t.cupos < 99;
-    const asunto = encodeURIComponent('Quiero inscribirme: ' + t.nom);
+    // Fecha, hora, frecuencia, precio y cupos son opcionales e independientes:
+    // lo que no existe todavía no se muestra, en vez de inventarlo.
+    const cuando = [
+      t.fecha && `<span>📅 <b>${t.fecha}</b></span>`,
+      t.frecuencia && `<span>📅 <b>${t.frecuencia}</b></span>`,
+      t.hora && `<span>🕗 ${t.hora}</span>`,
+    ].filter(Boolean).join('');
+    const cupos = textoCupos(t.cupos);
+    // typeof: null <= 0 es true en JS y marcaría agotado lo que no trae cupos
+    const agotado = typeof t.cupos === 'number' && t.cupos <= 0;
+    const pocos = agotado || (t.cupos > 0 && t.cupos <= 4);
+    const valor = [
+      t.precio && `<span class="precio">${t.precio}</span>`,
+      cupos && `<span class="cupos ${pocos ? 'pocos' : ''}">${cupos}</span>`,
+    ].filter(Boolean).join('');
+    const mensaje = encodeURIComponent(
+      (agotado ? 'Hola Sofi, avísame del próximo: ' : 'Hola Sofi, quiero inscribirme en: ') + t.nom);
+    // Con página propia (url), la ficha lleva ahí y la inscripción se ofrece
+    // desde esa página.
     d.innerHTML = `<span class="tag">${t.tag}</span><h3>${t.nom}</h3>
       <p>${t.desc}</p>
-      <div class="meta"><span>📅 <b>${t.fecha}</b></span><span>🕗 ${t.hora}</span></div>
-      <div class="meta"><span class="precio">${t.precio}</span>
-        <span class="cupos ${pocos ? 'pocos' : ''}">${t.cupos === 99 ? 'Cupos ilimitados' : (t.cupos + ' cupos' + (pocos ? ' — ¡quedan pocos!' : ' disponibles'))}</span></div>
-      <a class="btn primary small" href="mailto:${CORREO}?subject=${asunto}">Inscribirme</a>`;
+      ${cuando && `<div class="meta">${cuando}</div>`}
+      ${valor && `<div class="meta">${valor}</div>`}
+      ${t.url
+        ? `<a class="btn primary small" href="${t.url}">Ver el curso</a>`
+        : `<a class="btn primary small" href="${WHATSAPP}${mensaje}" target="_blank" rel="noopener">${agotado ? 'Avísame del próximo' : 'Inscribirme'}</a>`}`;
     lista.appendChild(d);
   });
 });

@@ -1,0 +1,32 @@
+/* Página de un curso (curso-abecedario.html). Se carga después de
+   base.css y componentes.css; solo agrega lo propio de esta página. */
+
+.curso-intro{display:grid; grid-template-columns:1.3fr .7fr; gap:2.5rem; align-items:start}
+.curso-intro > *{min-width:0}
+@media (max-width:760px){ .curso-intro{grid-template-columns:1fr} }
+
+/* video vertical de la invitación: tope de alto para que no ocupe toda la
+   pantalla en escritorio */
+.video-invitacion{width:100%; max-width:320px; max-height:80vh; aspect-ratio:9/16;
+  justify-self:center; border-radius:var(--radius); background:var(--ink); display:block}
+
+.curso-datos{list-style:none; padding:0; margin:1.2rem 0 0; max-width:62ch}
+.curso-datos li{padding-left:1.6rem; position:relative; margin-bottom:.5rem}
+.curso-datos li::before{content:"✿"; position:absolute; left:0; color:var(--coral)}
+
+/* temario: una ficha por letra */
+.abecedario{list-style:none; padding:0; margin:1.8rem 0 0; display:grid; gap:.9rem;
+  grid-template-columns:repeat(auto-fill,minmax(min(200px,100%),1fr))}
+.abecedario li{background:var(--card); border:1px solid var(--line); border-radius:14px;
+  padding:.9rem 1rem; display:grid; gap:.1rem .7rem;
+  /* minmax(0,…): con 1fr la columna no baja de su palabra más larga
+     ("contemporánea") y al 200% de letra desbordaba la pantalla */
+  grid-template-columns:2.4rem minmax(0,1fr)}
+.abecedario .letra{grid-row:span 2; font-family:Georgia,serif; font-size:2rem; line-height:1;
+  color:var(--coral)}
+.abecedario .concepto{font-family:Georgia,serif; font-weight:700; color:var(--ink)}
+.abecedario .autor{font-size:.85rem; color:var(--ink-soft)}
+
+.quien{display:flex; gap:1.4rem; align-items:center; flex-wrap:wrap; max-width:40rem}
+.quien img{width:140px; height:140px; border-radius:50%; object-fit:cover; flex:none}
+.quien > div{flex:1 1 16rem}
