@@ -47,13 +47,19 @@ cargarDatos('talleres.json', 'lista-talleres', (talleres, lista) => {
       (agotado ? 'Hola Sofi, avísame del próximo: ' : 'Hola Sofi, quiero inscribirme en: ') + t.nom);
     // Con página propia (url), la ficha lleva ahí y la inscripción se ofrece
     // desde esa página.
-    d.innerHTML = `<span class="tag">${t.tag}</span><h3>${t.nom}</h3>
+    const cuerpo = `<span class="tag">${t.tag}</span><h3>${t.nom}</h3>
       <p>${t.desc}</p>
       ${cuando && `<div class="meta">${cuando}</div>`}
       ${valor && `<div class="meta">${valor}</div>`}
       ${t.url
         ? `<a class="btn primary small" href="${t.url}">Ver el curso</a>`
         : `<a class="btn primary small" href="${WHATSAPP}${mensaje}" target="_blank" rel="noopener">${agotado ? 'Avísame del próximo' : 'Inscribirme'}</a>`}`;
+    // Con imagen (opcional), la ficha va a lo ancho: imagen a un lado, texto al otro.
+    if (t.img) {
+      d.classList.add('con-img');
+      d.innerHTML = `<img src="${t.img}" alt="${t.imgAlt || ''}" width="800" height="600" loading="lazy">
+        <div class="taller-texto">${cuerpo}</div>`;
+    } else d.innerHTML = cuerpo;
     lista.appendChild(d);
   });
 });

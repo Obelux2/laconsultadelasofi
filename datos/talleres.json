@@ -6,6 +6,8 @@
     "fecha": "Parte el martes 6 de octubre",
     "hora": "20:00",
     "precio": "$30.000 al mes",
-    "url": "curso-abecedario.html"
+    "url": "curso-abecedario.html",
+    "img": "assets/abecedario-taller.jpg",
+    "imgAlt": "Ilustración de un libro abierto del que salen letras y hojas, junto a una taza de té y unos lentes"
   }
 ]
