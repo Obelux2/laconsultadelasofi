@@ -31,3 +31,21 @@
 .quien{display:flex; gap:1.4rem; align-items:center; flex-wrap:wrap; max-width:40rem}
 .quien img{width:140px; height:140px; border-radius:50%; object-fit:cover; flex:none}
 .quien > div{flex:1 1 16rem}
+
+/* Curso Relaciones humanas en tiempos líquidos. Mantiene la estructura del
+   curso de referencia, pero usa una foto real de Sofía en vez de video. */
+.curso-retrato{margin:0; justify-self:center; max-width:320px}
+.curso-retrato img{display:block; width:100%; aspect-ratio:4/5; object-fit:cover;
+  object-position:center 50%; border-radius:var(--radius)}
+.curso-retrato figcaption{margin-top:.7rem; color:var(--ink-soft); font-size:.88rem;
+  font-style:italic; text-align:center}
+.recorrido-grid{display:grid; gap:1rem; margin-top:1.8rem;
+  grid-template-columns:repeat(3,minmax(0,1fr))}
+.recorrido-item{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:1.25rem 1.2rem}
+.recorrido-item span{display:block; margin-bottom:.65rem; color:var(--coral); font-family:Georgia,serif;
+  font-size:1.7rem; line-height:1}
+.recorrido-item h3{font-size:1.22rem}
+.recorrido-item p{margin-bottom:0; color:var(--ink-soft); font-size:.94rem}
+.curso-cierre{max-width:760px}
+@media (max-width:760px){.curso-retrato{max-width:min(320px,85vw)}.recorrido-grid{grid-template-columns:1fr}}
