@@ -49,3 +49,30 @@
 .recorrido-item p{margin-bottom:0; color:var(--ink-soft); font-size:.94rem}
 .curso-cierre{max-width:760px}
 @media (max-width:760px){.curso-retrato{max-width:min(320px,85vw)}.recorrido-grid{grid-template-columns:1fr}}
+
+/* Taller Venus y tu manera de amar: visual astral sin usar retratos ajenos
+   a quienes imparten la formación. */
+.venus-hero{overflow:hidden}
+.venus-visual{align-self:center; justify-self:center; width:min(100%,360px); color:var(--coral); text-align:center}
+.venus-visual svg{display:block; width:100%; height:auto; filter:drop-shadow(0 12px 22px rgba(147,79,90,.12))}
+.venus-visual p{margin:.2rem 0 0; color:var(--ink-soft); font-family:Georgia,serif; font-style:italic}
+.venus-orbita-uno,.venus-orbita-dos{fill:none; stroke:currentColor; stroke-width:1.4; opacity:.36}
+.venus-orbita-dos{stroke-dasharray:4 8; opacity:.58}
+.venus-trazo{fill:none; stroke:currentColor; stroke-width:8; stroke-linecap:round}
+.venus-planeta{fill:var(--rose); stroke:currentColor; stroke-width:3}
+.venus-punto{fill:var(--sage); stroke:var(--ink); stroke-width:1.2}
+.venus-estrellas{fill:var(--coral); opacity:.82}
+.venus-aprendizajes{grid-template-columns:repeat(3,minmax(0,1fr))}
+.venus-casa-siete{max-width:760px}
+.venus-dos-columnas{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin-top:1.4rem}
+.venus-dos-columnas article{padding:1.2rem; background:var(--card); border:1px solid var(--line); border-radius:var(--radius)}
+.venus-dos-columnas h3{color:var(--coral); font-family:Georgia,serif; font-size:1.35rem}
+.venus-dos-columnas p{margin-bottom:0; color:var(--ink-soft)}
+.venus-ficha-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin-top:1.5rem}
+.venus-ficha{padding:1.15rem 1.2rem; background:var(--card); border:1px solid var(--line); border-radius:var(--radius)}
+.venus-ficha span,.venus-precios span{display:block; color:var(--ink-soft); font-size:.85rem; margin-bottom:.35rem}
+.venus-ficha strong,.venus-precios strong{font-family:Georgia,serif; font-size:1.08rem}
+.venus-precios{display:flex; flex-wrap:wrap; gap:1rem; margin:1rem 0 0}
+.venus-precios > div{min-width:10rem; padding:1rem 1.15rem; border-left:3px solid var(--coral); background:rgba(215,112,105,.08)}
+.venus-contacto{font-weight:700}
+@media (max-width:760px){.venus-visual{max-width:280px}.venus-aprendizajes,.venus-dos-columnas,.venus-ficha-grid{grid-template-columns:1fr}.venus-precios{display:grid; grid-template-columns:1fr}}
