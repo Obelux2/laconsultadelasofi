@@ -50,18 +50,8 @@
 .curso-cierre{max-width:760px}
 @media (max-width:760px){.curso-retrato{max-width:min(320px,85vw)}.recorrido-grid{grid-template-columns:1fr}}
 
-/* Taller Venus y tu manera de amar: visual astral sin usar retratos ajenos
-   a quienes imparten la formación. */
+/* Taller Venus y tu manera de amar. */
 .venus-hero{overflow:hidden}
-.venus-visual{align-self:center; justify-self:center; width:min(100%,360px); color:var(--coral); text-align:center}
-.venus-visual svg{display:block; width:100%; height:auto; filter:drop-shadow(0 12px 22px rgba(147,79,90,.12))}
-.venus-visual p{margin:.2rem 0 0; color:var(--ink-soft); font-family:Georgia,serif; font-style:italic}
-.venus-orbita-uno,.venus-orbita-dos{fill:none; stroke:currentColor; stroke-width:1.4; opacity:.36}
-.venus-orbita-dos{stroke-dasharray:4 8; opacity:.58}
-.venus-trazo{fill:none; stroke:currentColor; stroke-width:8; stroke-linecap:round}
-.venus-planeta{fill:var(--rose); stroke:currentColor; stroke-width:3}
-.venus-punto{fill:var(--sage); stroke:var(--ink); stroke-width:1.2}
-.venus-estrellas{fill:var(--coral); opacity:.82}
 .venus-aprendizajes{grid-template-columns:repeat(3,minmax(0,1fr))}
 .venus-casa-siete{max-width:760px}
 .venus-dos-columnas{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin-top:1.4rem}
