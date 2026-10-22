@@ -47,6 +47,8 @@
   font-size:1.7rem; line-height:1}
 .recorrido-item h3{font-size:1.22rem}
 .recorrido-item p{margin-bottom:0; color:var(--ink-soft); font-size:.94rem}
+/* 4 sesiones (Liderazgo Saludable): 2×2 en vez de 3 columnas con una huérfana */
+.recorrido-grid.cuatro{grid-template-columns:repeat(2,minmax(0,1fr))}
 .curso-cierre{max-width:760px}
 @media (max-width:760px){.curso-retrato{max-width:min(320px,85vw)}.recorrido-grid{grid-template-columns:1fr}}
 
