@@ -1,5 +1,17 @@
 [
   {
+    "tag": "Curso · liderazgo · 4 sesiones",
+    "nom": "Soficonversas sobre Liderazgo Saludable",
+    "desc": "Cuatro conversaciones para dirigir personas sin dejar la salud emocional en el camino, revisando lo que se ha dicho del liderazgo desde nuestra cultura y contexto.",
+    "fecha": "Parte el lunes 16 de noviembre",
+    "frecuencia": "Cuatro sesiones, los lunes",
+    "hora": "20:00",
+    "precio": "$45.000",
+    "url": "curso-liderazgo-saludable.html",
+    "img": "assets/liderazgo-taller.jpg",
+    "imgAlt": "Cuatro tazas de té sobre una mesa redonda de madera, alrededor de un jarrón con flores secas, una vela encendida y un cuaderno abierto con un lápiz"
+  },
+  {
     "tag": "Curso · filosofía y psicología",
     "nom": "Un abecedario para pensar",
     "desc": "De la A a la Z por 27 conceptos: de la Angustia con Freud al Zaratustra de Nietzsche. No es necesario saber filosofía, solo tener ganas de pensar.",
